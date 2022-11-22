@@ -1,0 +1,155 @@
+GET http://localhost:3000/todos/?status=TO%20DO
+Content-Type: application/json
+
+      {
+        "id": 2,
+        "todo": "Buy a Car",
+        "priority": "MEDIUM",
+        "status": "TO DO",
+        "category": "HOME",
+        "dueDate": "2021-09-22"
+      }
+###
+GET http://localhost:3000/todos/?priority=HIGH
+Content-Type: application/json 
+
+{
+        "id": 1,
+        "todo": "Learn Node JS",
+        "priority": "HIGH",
+        "status": "IN PROGRESS",
+        "category": "LEARNING",
+        "dueDate": "2021-03-16"
+      }
+
+###
+
+       GET http://localhost:3000/todos/?priority=HIGH&status=IN%20PROGRESS
+Content-Type: application/json
+
+{
+        "id": 1,
+        "todo": "Learn Node JS",
+        "priority": "HIGH",
+        "status": "IN PROGRESS",
+        "category": "LEARNING",
+        "dueDate": "2021-03-16"
+      }
+
+###
+
+GET http://localhost:3000/todos/?search_q=Buy
+Content-Type: application/json
+
+{
+        "id": 2,
+        "todo": "Buy a Car",
+        "priority": "MEDIUM",
+        "status": "TO DO",
+        "category": "HOME",
+        "dueDate": "2021-09-22"
+      }
+
+###
+GET http://localhost:3000/todos/?category=WORK&status=DONE  
+Content-Type: application/json
+
+{
+        "id": 4,
+        "todo": "Fix the bug",
+        "priority": "MEDIUM",
+        "status": "DONE",
+        "category": "WORK",
+        "dueDate": "2021-01-25"
+      }
+
+###
+GET http://localhost:3000/todos/?category=HOME
+Content-Type: application/json
+
+{
+        "id": 2,
+        "todo": "Buy a Car",
+        "priority": "MEDIUM",
+        "status": "TO DO",
+        "category": "HOME",
+        "dueDate": "2021-09-22"
+      }
+
+###
+GET http://localhost:3000/todos/?category=LEARNING&priority=HIGH
+Content-Type: application/json
+
+{
+        "id": 1,
+        "todo": "Learn Node JS",
+        "priority": "HIGH",
+        "status": "IN PROGRESS",
+        "category": "LEARNING",
+        "dueDate": "2021-03-16"
+      }
+####
+GET http://localhost:3000/todos/1/
+Content-Type: application/json
+
+{
+  "id": 1,
+  "todo": "Learn Node JS",
+  "priority": "HIGH",
+  "status": "IN PROGRESS",
+  "category": "LEARNING",
+  "dueDate": "2021-03-16"
+}
+
+###
+GET http://localhost:3000/agenda/?date=2021-12-12
+Content-Type: application/json
+
+{
+    "id": 3,
+    "todo": "Clean the garden",
+    "priority": "LOW",
+    "status": "TO DO",
+    "category": "HOME",
+    "dueDate": "2021-12-12"
+  }
+
+###
+POST http://localhost:3000/todos/
+Content-Type: application/json
+
+{
+  "id": 6,
+  "todo": "Finalize event theme",
+  "priority": "LOW",
+  "status": "TO DO",
+  "category": "HOME",
+  "dueDate": "2021-02-22"
+}
+
+###
+PUT http://localhost:3000/todos/1/
+Content-Type: application/json
+
+
+{
+      "status": "DONE"
+    }
+###
+PUT http://localhost:3000/todos/?priority=HIGH
+Content-Type: applicaiton/json 
+
+{
+      "priority": "HIGH"
+    }        
+
+###
+PUT http://localhost:3000/todos/todo 
+Content-Type: application/json 
+
+{
+      "todo": "Clean the garden"
+    }
+
+###
+DELETE http://localhost:3000/todos/1/
